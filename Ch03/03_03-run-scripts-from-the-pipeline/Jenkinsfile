@@ -18,7 +18,7 @@ pipeline {
             steps {
                 sh ('ls -la')
                 sh ('pwd')
-                sh('chmod +x /Ch03/03_03-run-scripts-from-the-pipeline/fibonacci.sh')
+                sh('chmod +x ./fibonacci.sh')
             }
         }
         stage('Relative path') {
