@@ -17,12 +17,12 @@ pipeline {
         stage('Make executable') {
             steps {
                 sh ('pwd')
-                sh('chmod +x ./scripts/fibonacci.sh')
+                sh('chmod +x ./fibonacci.sh')
             }
         }
         stage('Relative path') {
             steps {
-                sh(".Ch03/03_03-run-scripts-from-the-pipeline/Jenkinsfile/scripts/fibonacci.sh ${env.NUMBER}")
+                sh("./fibonacci.sh ${env.NUMBER}")
             }
         }
         stage('Full path') {
@@ -33,7 +33,7 @@ pipeline {
         stage('Change directory') {
             steps {
                 dir("${env.WORKSPACE}/scripts"){
-                    sh(".Ch03/03_03-run-scripts-from-the-pipeline/Jenkinsfile/fibonacci.sh ${env.NUMBER}")
+                    sh("./fibonacci.sh ${env.NUMBER}")
                 }
             }
         }
